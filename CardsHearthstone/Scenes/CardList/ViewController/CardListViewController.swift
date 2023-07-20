@@ -54,7 +54,11 @@ extension CardListViewController: CardListDisplayLogic {
     }
     
     func displayError(_ errorMessage: String) {
-        print(errorMessage)
+        shouldShowLoading(false)
+        router?.routeToAlertError(errorMessage: errorMessage) { [weak self] _ in
+            guard let self else { return }
+            self.getCardList()
+        }
     }
 }
 
