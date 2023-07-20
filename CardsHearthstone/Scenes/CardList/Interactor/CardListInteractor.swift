@@ -14,22 +14,24 @@ protocol CardListBusinessLogic: AnyObject {
 final class CardListInteractor {
     
     let worker: CardListWorkerLogic?
-    // var presenter: CardListPresentationLogic?
+    let presenter: CardListPresentationLogic?
     
-    init(worker: CardListWorkerLogic?) {
+    init(worker: CardListWorkerLogic, presenter: CardListPresentationLogic) {
         self.worker = worker
+        self.presenter = presenter
     }
     
 }
 
 extension CardListInteractor: CardListBusinessLogic {
     func getCardList() {
-        worker?.getCardList(completionHandler: { result in
+        worker?.getCardList(completionHandler: { [weak presenter] result in
+            guard let presenter else { return }
             switch result {
             case .success(let response):
-                print(response.count)
+                presenter.presentCardList(response: response)
             case .failure(let error):
-                print(error.errorMessage)
+                presenter.presentError(errorMessage: error.errorMessage)
             }
         })
     }
