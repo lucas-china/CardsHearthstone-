@@ -28,6 +28,9 @@ enum CardListModels {
             let type:String?
             let mechanics: [String]?
         }
-        struct ViewModel {}
+        struct ViewModel {
+            let id:String
+            let name:String?
+        }
     }
 }

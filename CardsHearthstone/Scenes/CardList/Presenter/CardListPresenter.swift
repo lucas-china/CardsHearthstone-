@@ -13,15 +13,19 @@ protocol CardListPresentationLogic: AnyObject {
 }
 
 final class CardListPresenter {
-//    weak var viewController: DisplayLogic?
+    weak var viewController: CardListDisplayLogic?
 }
 
 extension CardListPresenter: CardListPresentationLogic {
     func presentCardList(response: [CardListModels.Cards.Response]) {
-        print(response.count)
+        let viewModel = response.map { response in
+            return CardListModels.Cards.ViewModel(id: response.id, name: response.name)
+            
+        }
+        viewController?.displayCardList(viewModel)
     }
     
     func presentError(errorMessage: String) {
-        print(errorMessage)
+        viewController?.displayError(errorMessage)
     }
 }

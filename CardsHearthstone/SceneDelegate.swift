@@ -20,7 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = ViewController()
+        let viewController = CardListConfiguration.makeView()
+        
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
 
