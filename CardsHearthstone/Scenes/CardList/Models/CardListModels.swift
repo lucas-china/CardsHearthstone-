@@ -31,6 +31,10 @@ enum CardListModels {
         struct ViewModel {
             let id:String
             let name:String?
+            
+            var imageURL: String {
+                "https://art.hearthstonejson.com/v1/render/latest/ptBR/256x/\(id).png"
+            }
         }
     }
 }

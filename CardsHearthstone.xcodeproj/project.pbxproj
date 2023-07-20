@@ -21,6 +21,11 @@
 		74E532132A69DC9600679B31 /* CardListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532122A69DC9600679B31 /* CardListPresenter.swift */; };
 		74E532162A69DF0700679B31 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532152A69DF0700679B31 /* CardListViewController.swift */; };
 		74E532192A69DFAB00679B31 /* CardListConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532182A69DFAB00679B31 /* CardListConfiguration.swift */; };
+		74E5321C2A69E9BE00679B31 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5321B2A69E9BE00679B31 /* CardListView.swift */; };
+		74E532202A69EA8F00679B31 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5321F2A69EA8E00679B31 /* ConfigurationView.swift */; };
+		74E532232A69EDA500679B31 /* CardListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532222A69EDA500679B31 /* CardListCollectionViewCell.swift */; };
+		74E532262A69F08500679B31 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532252A69F08500679B31 /* CustomImageView.swift */; };
+		74E532292A69F1B000679B31 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532282A69F1B000679B31 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		74E532122A69DC9600679B31 /* CardListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListPresenter.swift; sourceTree = "<group>"; };
 		74E532152A69DF0700679B31 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		74E532182A69DFAB00679B31 /* CardListConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListConfiguration.swift; sourceTree = "<group>"; };
+		74E5321B2A69E9BE00679B31 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		74E5321F2A69EA8E00679B31 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		74E532222A69EDA500679B31 /* CardListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionViewCell.swift; sourceTree = "<group>"; };
+		74E532252A69F08500679B31 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		74E532282A69F1B000679B31 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 		74E531E82A69D01500679B31 /* CardsHearthstone */ = {
 			isa = PBXGroup;
 			children = (
+				74E5321D2A69EA4F00679B31 /* Utils */,
 				74E531FD2A69D13300679B31 /* Network */,
 				74E532062A69D4DF00679B31 /* Scenes */,
 				74E531E92A69D01500679B31 /* AppDelegate.swift */,
@@ -105,6 +116,7 @@
 		74E532072A69D4EC00679B31 /* CardList */ = {
 			isa = PBXGroup;
 			children = (
+				74E5321A2A69E9B300679B31 /* View */,
 				74E532172A69DF8700679B31 /* Configuration */,
 				74E532142A69DEF300679B31 /* ViewController */,
 				74E532112A69DC8900679B31 /* Presenter */,
@@ -161,6 +173,57 @@
 				74E532182A69DFAB00679B31 /* CardListConfiguration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		74E5321A2A69E9B300679B31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74E532212A69ED9300679B31 /* Cell */,
+				74E5321B2A69E9BE00679B31 /* CardListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74E5321D2A69EA4F00679B31 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				74E532272A69F19E00679B31 /* Extensions */,
+				74E532242A69F06900679B31 /* CustomViews */,
+				74E5321E2A69EA8100679B31 /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		74E5321E2A69EA8100679B31 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				74E5321F2A69EA8E00679B31 /* ConfigurationView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		74E532212A69ED9300679B31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				74E532222A69EDA500679B31 /* CardListCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		74E532242A69F06900679B31 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				74E532252A69F08500679B31 /* CustomImageView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		74E532272A69F19E00679B31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				74E532282A69F1B000679B31 /* Array+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,16 +297,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E532162A69DF0700679B31 /* CardListViewController.swift in Sources */,
+				74E532202A69EA8F00679B31 /* ConfigurationView.swift in Sources */,
 				74E532192A69DFAB00679B31 /* CardListConfiguration.swift in Sources */,
 				74E532052A69D1D600679B31 /* NetworkRoutes.swift in Sources */,
 				74E5320A2A69D56400679B31 /* CardListModels.swift in Sources */,
 				74E5320D2A69D6EA00679B31 /* CardListWorker.swift in Sources */,
+				74E532232A69EDA500679B31 /* CardListCollectionViewCell.swift in Sources */,
 				74E532032A69D1C300679B31 /* NetworkManager.swift in Sources */,
 				74E532102A69D9F000679B31 /* CardListInteractor.swift in Sources */,
+				74E532292A69F1B000679B31 /* Array+Extension.swift in Sources */,
+				74E532262A69F08500679B31 /* CustomImageView.swift in Sources */,
 				74E531FF2A69D17500679B31 /* NetworkError.swift in Sources */,
 				74E531EA2A69D01500679B31 /* AppDelegate.swift in Sources */,
 				74E532012A69D1A600679B31 /* NetworkHTTPMethod.swift in Sources */,
 				74E531EC2A69D01500679B31 /* SceneDelegate.swift in Sources */,
+				74E5321C2A69E9BE00679B31 /* CardListView.swift in Sources */,
 				74E532132A69DC9600679B31 /* CardListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

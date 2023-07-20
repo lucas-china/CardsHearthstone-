@@ -15,6 +15,7 @@ protocol CardListDisplayLogic: AnyObject {
 class CardListViewController: UIViewController {
     
     let interactor: CardListBusinessLogic?
+    lazy var cardView = CardListView()
     
     init(interactor: CardListBusinessLogic) {
         self.interactor = interactor
@@ -25,10 +26,13 @@ class CardListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        view = cardView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
         interactor?.getCardList()
     }
     
@@ -37,6 +41,7 @@ class CardListViewController: UIViewController {
 extension CardListViewController: CardListDisplayLogic {
     func displayCardList(_ viewModel: [CardListModels.Cards.ViewModel]) {
         print(viewModel.count)
+        cardView.list = viewModel
     }
     
     func displayError(_ errorMessage: String) {
