@@ -22,6 +22,7 @@ class CardListCollectionViewCell: UICollectionViewCell {
     private lazy var cardNameLabel: UILabel = {
         let label = UILabel()
         label.lineBreakMode = .byTruncatingTail
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

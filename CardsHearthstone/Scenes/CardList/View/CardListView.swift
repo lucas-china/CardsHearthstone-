@@ -49,10 +49,10 @@ extension CardListView: ConfigurationView {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            cardsCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16.0),
-            cardsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
-            cardsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
-            cardsCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16.0)
+            cardsCollectionView.topAnchor.constraint(equalTo: topAnchor),
+            cardsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cardsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cardsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
@@ -64,7 +64,7 @@ extension CardListView: ConfigurationView {
 
 extension CardListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (bounds.size.width / 2.5), height: bounds.size.height / 3.0)
+        return CGSize(width: (bounds.size.width / 2.3), height: bounds.size.height / 3.0)
     }
 }
 
