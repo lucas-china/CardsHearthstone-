@@ -14,9 +14,12 @@ protocol CardListDisplayLogic: AnyObject {
 
 class CardListViewController: UIViewController {
     
-    let interactor: CardListBusinessLogic?
     lazy var cardView = CardListView()
     
+    let interactor: CardListBusinessLogic?
+    var router: CardListRoutingLogic?
+    
+    // MARK: - Init
     init(interactor: CardListBusinessLogic) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -26,25 +29,33 @@ class CardListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Override Methods
     override func loadView() {
+        cardView.delegate = self
         view = cardView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         interactor?.getCardList()
     }
     
 }
 
+// MARK: - CardListDisplayLogic
 extension CardListViewController: CardListDisplayLogic {
     func displayCardList(_ viewModel: [CardListModels.Cards.ViewModel]) {
-        print(viewModel.count)
         cardView.list = viewModel
     }
     
     func displayError(_ errorMessage: String) {
         print(errorMessage)
+    }
+}
+
+// MARK: - CardListViewDelegate
+extension CardListViewController: CardListViewDelegate {
+    func cardItemDidSelect(_ card: CardListModels.Cards.ViewModel) {
+        router?.routeToCardDetails(card.id)
     }
 }

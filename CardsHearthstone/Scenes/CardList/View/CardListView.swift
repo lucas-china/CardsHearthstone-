@@ -7,7 +7,9 @@
 
 import UIKit
 
-
+protocol CardListViewDelegate: AnyObject {
+    func cardItemDidSelect(_ card: CardListModels.Cards.ViewModel)
+}
 
 class CardListView: UIView {
     private lazy var cardsCollectionView: UICollectionView = {
@@ -31,6 +33,8 @@ class CardListView: UIView {
             cardsCollectionView.reloadData()
         }
     }
+    
+    weak var delegate: CardListViewDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -65,6 +69,11 @@ extension CardListView: ConfigurationView {
 extension CardListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (bounds.size.width / 2.3), height: bounds.size.height / 3.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let card = list[safe: indexPath.row] else { return }
+        delegate?.cardItemDidSelect(card)
     }
 }
 

@@ -26,6 +26,7 @@
 		74E532232A69EDA500679B31 /* CardListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532222A69EDA500679B31 /* CardListCollectionViewCell.swift */; };
 		74E532262A69F08500679B31 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532252A69F08500679B31 /* CustomImageView.swift */; };
 		74E532292A69F1B000679B31 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532282A69F1B000679B31 /* Array+Extension.swift */; };
+		74E5322C2A69F74000679B31 /* CardListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5322B2A69F74000679B31 /* CardListRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		74E532222A69EDA500679B31 /* CardListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCollectionViewCell.swift; sourceTree = "<group>"; };
 		74E532252A69F08500679B31 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		74E532282A69F1B000679B31 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		74E5322B2A69F74000679B31 /* CardListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		74E532072A69D4EC00679B31 /* CardList */ = {
 			isa = PBXGroup;
 			children = (
+				74E5322A2A69F72F00679B31 /* Router */,
 				74E5321A2A69E9B300679B31 /* View */,
 				74E532172A69DF8700679B31 /* Configuration */,
 				74E532142A69DEF300679B31 /* ViewController */,
@@ -226,6 +229,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		74E5322A2A69F72F00679B31 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				74E5322B2A69F74000679B31 /* CardListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +323,7 @@
 				74E532012A69D1A600679B31 /* NetworkHTTPMethod.swift in Sources */,
 				74E531EC2A69D01500679B31 /* SceneDelegate.swift in Sources */,
 				74E5321C2A69E9BE00679B31 /* CardListView.swift in Sources */,
+				74E5322C2A69F74000679B31 /* CardListRouter.swift in Sources */,
 				74E532132A69DC9600679B31 /* CardListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,8 +14,10 @@ class CardListConfiguration {
         let presenter = CardListPresenter()
         let interactor = CardListInteractor(worker: worker, presenter: presenter)
         let viewController = CardListViewController(interactor: interactor)
+        let router = CardListRouter(viewController: viewController)
         
         presenter.viewController = viewController
+        viewController.router = router
         return viewController
     }
 }
