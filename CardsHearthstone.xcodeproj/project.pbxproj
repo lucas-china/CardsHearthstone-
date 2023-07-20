@@ -27,6 +27,8 @@
 		74E532262A69F08500679B31 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532252A69F08500679B31 /* CustomImageView.swift */; };
 		74E532292A69F1B000679B31 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532282A69F1B000679B31 /* Array+Extension.swift */; };
 		74E5322C2A69F74000679B31 /* CardListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5322B2A69F74000679B31 /* CardListRouter.swift */; };
+		74E5322E2A69FD7F00679B31 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5322D2A69FD7F00679B31 /* SpinnerViewController.swift */; };
+		74E532302A69FDA200679B31 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5322F2A69FDA200679B31 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		74E532252A69F08500679B31 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		74E532282A69F1B000679B31 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		74E5322B2A69F74000679B31 /* CardListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListRouter.swift; sourceTree = "<group>"; };
+		74E5322D2A69FD7F00679B31 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		74E5322F2A69FDA200679B31 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				74E532252A69F08500679B31 /* CustomImageView.swift */,
+				74E5322D2A69FD7F00679B31 /* SpinnerViewController.swift */,
+				74E5322F2A69FDA200679B31 /* BaseViewController.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -312,7 +318,9 @@
 				74E532192A69DFAB00679B31 /* CardListConfiguration.swift in Sources */,
 				74E532052A69D1D600679B31 /* NetworkRoutes.swift in Sources */,
 				74E5320A2A69D56400679B31 /* CardListModels.swift in Sources */,
+				74E532302A69FDA200679B31 /* BaseViewController.swift in Sources */,
 				74E5320D2A69D6EA00679B31 /* CardListWorker.swift in Sources */,
+				74E5322E2A69FD7F00679B31 /* SpinnerViewController.swift in Sources */,
 				74E532232A69EDA500679B31 /* CardListCollectionViewCell.swift in Sources */,
 				74E532032A69D1C300679B31 /* NetworkManager.swift in Sources */,
 				74E532102A69D9F000679B31 /* CardListInteractor.swift in Sources */,

@@ -12,7 +12,7 @@ protocol CardListDisplayLogic: AnyObject {
     func displayError(_ errorMessage: String)
 }
 
-class CardListViewController: UIViewController {
+class CardListViewController: BaseViewController {
     
     lazy var cardView = CardListView()
     
@@ -35,16 +35,21 @@ class CardListViewController: UIViewController {
         view = cardView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor?.getCardList()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getCardList()
     }
     
+    private func getCardList() {
+        shouldShowLoading(true)
+        interactor?.getCardList()
+    }
 }
 
 // MARK: - CardListDisplayLogic
 extension CardListViewController: CardListDisplayLogic {
     func displayCardList(_ viewModel: [CardListModels.Cards.ViewModel]) {
+        shouldShowLoading(false)
         cardView.list = viewModel
     }
     
