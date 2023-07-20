@@ -16,6 +16,7 @@
 		74E532012A69D1A600679B31 /* NetworkHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532002A69D1A600679B31 /* NetworkHTTPMethod.swift */; };
 		74E532032A69D1C300679B31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532022A69D1C300679B31 /* NetworkManager.swift */; };
 		74E532052A69D1D600679B31 /* NetworkRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532042A69D1D600679B31 /* NetworkRoutes.swift */; };
+		74E5320A2A69D56400679B31 /* CardListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532092A69D56300679B31 /* CardListModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		74E532002A69D1A600679B31 /* NetworkHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHTTPMethod.swift; sourceTree = "<group>"; };
 		74E532022A69D1C300679B31 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		74E532042A69D1D600679B31 /* NetworkRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoutes.swift; sourceTree = "<group>"; };
+		74E532092A69D56300679B31 /* CardListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				74E531FD2A69D13300679B31 /* Network */,
+				74E532062A69D4DF00679B31 /* Scenes */,
 				74E531E92A69D01500679B31 /* AppDelegate.swift */,
 				74E531EB2A69D01500679B31 /* SceneDelegate.swift */,
 				74E531ED2A69D01500679B31 /* ViewController.swift */,
@@ -82,6 +85,30 @@
 				74E532042A69D1D600679B31 /* NetworkRoutes.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		74E532062A69D4DF00679B31 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				74E532072A69D4EC00679B31 /* CardList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		74E532072A69D4EC00679B31 /* CardList */ = {
+			isa = PBXGroup;
+			children = (
+				74E532082A69D50100679B31 /* Models */,
+			);
+			path = CardList;
+			sourceTree = "<group>";
+		};
+		74E532082A69D50100679B31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74E532092A69D56300679B31 /* CardListModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E532052A69D1D600679B31 /* NetworkRoutes.swift in Sources */,
+				74E5320A2A69D56400679B31 /* CardListModels.swift in Sources */,
 				74E532032A69D1C300679B31 /* NetworkManager.swift in Sources */,
 				74E531EE2A69D01500679B31 /* ViewController.swift in Sources */,
 				74E531FF2A69D17500679B31 /* NetworkError.swift in Sources */,
