@@ -46,7 +46,8 @@ final class CardListRouter {
 
 extension CardListRouter: CardListRoutingLogic {
     func routeToCardDetails(_ cardId: String) {
-        print("Route to new Scene! \(cardId)")
+        let cardDetailsViewController = CardDetailsConfiguration.makeView(with: cardId)
+        viewController?.navigationController?.pushViewController(cardDetailsViewController, animated: true)
     }
     
     func routeToAlertError(errorMessage: String, action: ((UIAlertAction) -> Void)?) {
