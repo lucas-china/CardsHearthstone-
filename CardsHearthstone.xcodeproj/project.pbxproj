@@ -37,7 +37,19 @@
 		74E532462A6A4C4E00679B31 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */; };
 		74E532492A6A522600679B31 /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532482A6A522600679B31 /* CardDetailsView.swift */; };
 		74E5324C2A6AF30A00679B31 /* CardDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5324B2A6AF30A00679B31 /* CardDetailsTableViewCell.swift */; };
+		74E5325E2A6B03C700679B31 /* CardListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5325D2A6B03C700679B31 /* CardListInteractorTests.swift */; };
+		74E532602A6B04C900679B31 /* CardListSeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5325F2A6B04C900679B31 /* CardListSeeds.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74E532552A6B02BA00679B31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74E531DE2A69D01500679B31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74E531E52A69D01500679B31;
+			remoteInfo = CardsHearthstone;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		74E531E62A69D01500679B31 /* CardsHearthstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsHearthstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,10 +84,20 @@
 		74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		74E532482A6A522600679B31 /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
 		74E5324B2A6AF30A00679B31 /* CardDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		74E532512A6B02BA00679B31 /* CardsHearthstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsHearthstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E5325D2A6B03C700679B31 /* CardListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListInteractorTests.swift; sourceTree = "<group>"; };
+		74E5325F2A6B04C900679B31 /* CardListSeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSeeds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		74E531E32A69D01500679B31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74E5324E2A6B02BA00679B31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				74E531E82A69D01500679B31 /* CardsHearthstone */,
+				74E532522A6B02BA00679B31 /* CardsHearthstoneTests */,
 				74E531E72A69D01500679B31 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				74E531E62A69D01500679B31 /* CardsHearthstone.app */,
+				74E532512A6B02BA00679B31 /* CardsHearthstoneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,6 +363,39 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		74E532522A6B02BA00679B31 /* CardsHearthstoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				74E5325A2A6B032300679B31 /* Scenes */,
+			);
+			path = CardsHearthstoneTests;
+			sourceTree = "<group>";
+		};
+		74E5325A2A6B032300679B31 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				74E5325B2A6B032F00679B31 /* CardList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		74E5325B2A6B032F00679B31 /* CardList */ = {
+			isa = PBXGroup;
+			children = (
+				74E5325C2A6B03B200679B31 /* Interactor */,
+				74E5325F2A6B04C900679B31 /* CardListSeeds.swift */,
+			);
+			path = CardList;
+			sourceTree = "<group>";
+		};
+		74E5325C2A6B03B200679B31 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				74E5325D2A6B03C700679B31 /* CardListInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +416,24 @@
 			productReference = 74E531E62A69D01500679B31 /* CardsHearthstone.app */;
 			productType = "com.apple.product-type.application";
 		};
+		74E532502A6B02BA00679B31 /* CardsHearthstoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74E532572A6B02BA00679B31 /* Build configuration list for PBXNativeTarget "CardsHearthstoneTests" */;
+			buildPhases = (
+				74E5324D2A6B02BA00679B31 /* Sources */,
+				74E5324E2A6B02BA00679B31 /* Frameworks */,
+				74E5324F2A6B02BA00679B31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74E532562A6B02BA00679B31 /* PBXTargetDependency */,
+			);
+			name = CardsHearthstoneTests;
+			productName = CardsHearthstoneTests;
+			productReference = 74E532512A6B02BA00679B31 /* CardsHearthstoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -371,6 +446,10 @@
 				TargetAttributes = {
 					74E531E52A69D01500679B31 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					74E532502A6B02BA00679B31 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 74E531E52A69D01500679B31;
 					};
 				};
 			};
@@ -388,6 +467,7 @@
 			projectRoot = "";
 			targets = (
 				74E531E52A69D01500679B31 /* CardsHearthstone */,
+				74E532502A6B02BA00679B31 /* CardsHearthstoneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -399,6 +479,13 @@
 			files = (
 				74E531F62A69D01600679B31 /* LaunchScreen.storyboard in Resources */,
 				74E531F32A69D01600679B31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74E5324F2A6B02BA00679B31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +527,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74E5324D2A6B02BA00679B31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74E5325E2A6B03C700679B31 /* CardListInteractorTests.swift in Sources */,
+				74E532602A6B04C900679B31 /* CardListSeeds.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74E532562A6B02BA00679B31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74E531E52A69D01500679B31 /* CardsHearthstone */;
+			targetProxy = 74E532552A6B02BA00679B31 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		74E531F42A69D01600679B31 /* LaunchScreen.storyboard */ = {
@@ -626,6 +730,40 @@
 			};
 			name = Release;
 		};
+		74E532582A6B02BA00679B31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.lsb.CardsHearthstoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardsHearthstone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CardsHearthstone";
+			};
+			name = Debug;
+		};
+		74E532592A6B02BA00679B31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.lsb.CardsHearthstoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardsHearthstone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CardsHearthstone";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -643,6 +781,15 @@
 			buildConfigurations = (
 				74E531FB2A69D01600679B31 /* Debug */,
 				74E531FC2A69D01600679B31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74E532572A6B02BA00679B31 /* Build configuration list for PBXNativeTarget "CardsHearthstoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74E532582A6B02BA00679B31 /* Debug */,
+				74E532592A6B02BA00679B31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
