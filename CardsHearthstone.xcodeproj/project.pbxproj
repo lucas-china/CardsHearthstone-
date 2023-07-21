@@ -39,6 +39,8 @@
 		74E5324C2A6AF30A00679B31 /* CardDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5324B2A6AF30A00679B31 /* CardDetailsTableViewCell.swift */; };
 		74E5325E2A6B03C700679B31 /* CardListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5325D2A6B03C700679B31 /* CardListInteractorTests.swift */; };
 		74E532602A6B04C900679B31 /* CardListSeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5325F2A6B04C900679B31 /* CardListSeeds.swift */; };
+		74E532632A6B07DA00679B31 /* CardListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532622A6B07DA00679B31 /* CardListPresenterTests.swift */; };
+		74E532662A6B092500679B31 /* CardListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532652A6B092500679B31 /* CardListViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		74E532512A6B02BA00679B31 /* CardsHearthstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsHearthstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E5325D2A6B03C700679B31 /* CardListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListInteractorTests.swift; sourceTree = "<group>"; };
 		74E5325F2A6B04C900679B31 /* CardListSeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSeeds.swift; sourceTree = "<group>"; };
+		74E532622A6B07DA00679B31 /* CardListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListPresenterTests.swift; sourceTree = "<group>"; };
+		74E532652A6B092500679B31 /* CardListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +386,8 @@
 		74E5325B2A6B032F00679B31 /* CardList */ = {
 			isa = PBXGroup;
 			children = (
+				74E532642A6B091300679B31 /* ViewController */,
+				74E532612A6B07C500679B31 /* Presenter */,
 				74E5325C2A6B03B200679B31 /* Interactor */,
 				74E5325F2A6B04C900679B31 /* CardListSeeds.swift */,
 			);
@@ -394,6 +400,22 @@
 				74E5325D2A6B03C700679B31 /* CardListInteractorTests.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		74E532612A6B07C500679B31 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				74E532622A6B07DA00679B31 /* CardListPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		74E532642A6B091300679B31 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74E532652A6B092500679B31 /* CardListViewControllerTests.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,8 +553,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E532662A6B092500679B31 /* CardListViewControllerTests.swift in Sources */,
 				74E5325E2A6B03C700679B31 /* CardListInteractorTests.swift in Sources */,
 				74E532602A6B04C900679B31 /* CardListSeeds.swift in Sources */,
+				74E532632A6B07DA00679B31 /* CardListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
