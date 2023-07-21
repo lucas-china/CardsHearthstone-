@@ -41,6 +41,7 @@
 		74E532602A6B04C900679B31 /* CardListSeeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5325F2A6B04C900679B31 /* CardListSeeds.swift */; };
 		74E532632A6B07DA00679B31 /* CardListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532622A6B07DA00679B31 /* CardListPresenterTests.swift */; };
 		74E532662A6B092500679B31 /* CardListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532652A6B092500679B31 /* CardListViewControllerTests.swift */; };
+		74E532692A6B0A6500679B31 /* CardDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532682A6B0A6500679B31 /* CardDetailsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		74E5325F2A6B04C900679B31 /* CardListSeeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSeeds.swift; sourceTree = "<group>"; };
 		74E532622A6B07DA00679B31 /* CardListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListPresenterTests.swift; sourceTree = "<group>"; };
 		74E532652A6B092500679B31 /* CardListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewControllerTests.swift; sourceTree = "<group>"; };
+		74E532682A6B0A6500679B31 /* CardDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 		74E532332A6A3A5100679B31 /* CardDetails */ = {
 			isa = PBXGroup;
 			children = (
+				74E532672A6B0A5700679B31 /* Router */,
 				74E532472A6A521800679B31 /* View */,
 				74E532432A6A4C2800679B31 /* Presenter */,
 				74E532402A6A49BD00679B31 /* Interactor */,
@@ -418,6 +421,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		74E532672A6B0A5700679B31 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				74E532682A6B0A6500679B31 /* CardDetailsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -521,6 +532,7 @@
 				74E532162A69DF0700679B31 /* CardListViewController.swift in Sources */,
 				74E532392A6A3AAD00679B31 /* CardDetailsViewController.swift in Sources */,
 				74E532202A69EA8F00679B31 /* ConfigurationView.swift in Sources */,
+				74E532692A6B0A6500679B31 /* CardDetailsRouter.swift in Sources */,
 				74E532192A69DFAB00679B31 /* CardListConfiguration.swift in Sources */,
 				74E532052A69D1D600679B31 /* NetworkRoutes.swift in Sources */,
 				74E5320A2A69D56400679B31 /* CardListModels.swift in Sources */,

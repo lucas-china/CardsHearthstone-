@@ -13,8 +13,10 @@ class CardDetailsConfiguration {
         let presenter = CardDetailsPresenter()
         let interactor = CardDetailsInteractor(cardId: cardId, worker: worker, presenter: presenter)
         let viewController = CardDetailsViewController(interactor: interactor)
+        let router = CardDetailsRouter(viewController: viewController)
         
         presenter.viewController = viewController
+        viewController.router = router
         return viewController
     }
 }

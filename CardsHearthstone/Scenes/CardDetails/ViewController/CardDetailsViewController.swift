@@ -16,8 +16,9 @@ class CardDetailsViewController: BaseViewController {
     
     lazy var cardDetailsView = CardDetailsView()
     
-    let interactor: CardDetailsBusinessLogic
     weak var viewDelegate: CardDetailsViewDelegate?
+    let interactor: CardDetailsBusinessLogic
+    var router: CardDetailsRoutingLogic?
     
     // MARK: - init
     init(interactor: CardDetailsBusinessLogic) {
@@ -37,6 +38,10 @@ class CardDetailsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getCardDetails()
+    }
+    
+    private func getCardDetails() {
         shouldShowLoading(true)
         interactor.getCardDetails()
     }
@@ -50,6 +55,10 @@ extension CardDetailsViewController: CardDetailsDisplayLogic {
     }
     
     func displayError(errorMessage: String) {
-        print(errorMessage)
+        shouldShowLoading(false)
+        router?.routeToAlertError(errorMessage: errorMessage) { [weak self] _ in
+            guard let self else { return }
+            self.getCardDetails()
+        }
     }
 }
