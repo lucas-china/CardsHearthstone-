@@ -36,6 +36,7 @@
 		74E532422A6A49D100679B31 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532412A6A49D100679B31 /* CardDetailsInteractor.swift */; };
 		74E532462A6A4C4E00679B31 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */; };
 		74E532492A6A522600679B31 /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532482A6A522600679B31 /* CardDetailsView.swift */; };
+		74E5324C2A6AF30A00679B31 /* CardDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5324B2A6AF30A00679B31 /* CardDetailsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		74E532412A6A49D100679B31 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
 		74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
 		74E532482A6A522600679B31 /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
+		74E5324B2A6AF30A00679B31 /* CardDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,9 +325,18 @@
 		74E532472A6A521800679B31 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				74E5324A2A6AF2FB00679B31 /* Cells */,
 				74E532482A6A522600679B31 /* CardDetailsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		74E5324A2A6AF2FB00679B31 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				74E5324B2A6AF30A00679B31 /* CardDetailsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +421,7 @@
 				74E5320D2A69D6EA00679B31 /* CardListWorker.swift in Sources */,
 				74E5322E2A69FD7F00679B31 /* SpinnerViewController.swift in Sources */,
 				74E532422A6A49D100679B31 /* CardDetailsInteractor.swift in Sources */,
+				74E5324C2A6AF30A00679B31 /* CardDetailsTableViewCell.swift in Sources */,
 				74E532232A69EDA500679B31 /* CardListCollectionViewCell.swift in Sources */,
 				74E5323F2A6A401500679B31 /* CardDetailsWorker.swift in Sources */,
 				74E532032A69D1C300679B31 /* NetworkManager.swift in Sources */,

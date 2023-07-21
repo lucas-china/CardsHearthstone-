@@ -15,7 +15,7 @@ class CardDetailsView: UIView {
     private lazy var cardImageView: CustomImageView = {
         let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 16.0
+        imageView.layer.cornerRadius = ViewMetrics.CardImage.cornerRadius
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -24,12 +24,16 @@ class CardDetailsView: UIView {
     private lazy var infosTableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.register(
+            CardDetailsTableViewCell.self,
+            forCellReuseIdentifier: CardDetailsTableViewCell.cellIdentifier
+        )
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    var card: CardDetailsModels.Card.ViewModel?
+    private var card: CardDetailsModels.Card.ViewModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +59,7 @@ extension CardDetailsView: ConfigurationView {
         ])
         
         NSLayoutConstraint.activate([
-            infosTableView.topAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 10.0),
+            infosTableView.topAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: ViewMetrics.TableView.top),
             infosTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             infosTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             infosTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
@@ -68,40 +72,56 @@ extension CardDetailsView: ConfigurationView {
     }
 }
 
+extension CardDetailsView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ViewMetrics.TableView.heightForRowAt
+    }
+}
+
 extension CardDetailsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return ViewMetrics.TableView.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        switch indexPath.row {
-        case 0:
-            cell.textLabel?.text = "Nome: " + (card?.name ?? Texts.noInformation)
-        case 1:
-            cell.textLabel?.text = "Flavor: " + (card?.flavor ?? Texts.noInformation)
-        case 2:
-            cell.textLabel?.text = "Descrição: " + (card?.text ?? Texts.noInformation)
-        case 3:
-            cell.textLabel?.text = "Set: " + (card?.cardSet ?? Texts.noInformation)
-        case 4:
-            cell.textLabel?.text = "Tipo: " + (card?.type ?? Texts.noInformation)
-        case 5:
-            cell.textLabel?.text = "Facção: " + (card?.faction ?? Texts.noInformation)
-        case 6:
-            cell.textLabel?.text = "Radidade: " + (card?.rarity ?? Texts.noInformation)
-        case 7:
-            cell.textLabel?.text = card?.attack != nil ? "Ataque: \(card?.attack ?? 0)" : "Ataque: ******"
-        case 8:
-            cell.textLabel?.text = card?.cost != nil ? "Custo: \(card?.cost ?? 0)" : "Custo: ******"
-        case 9:
-            cell.textLabel?.text = card?.health != nil ? "Saúde: \(card?.health ?? 0)" : "Saúde: ******"
-        default:
-            break
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CardDetailsTableViewCell.cellIdentifier,
+            for: indexPath
+        ) as? CardDetailsTableViewCell else {
+            return UITableViewCell()
         }
         
+        let infoCardString = createInfoCardString(from: indexPath.row)
+        cell.configureCell(info: infoCardString)
+
         return cell
+    }
+    
+    private func createInfoCardString(from index: Int) -> String {
+        switch index {
+        case 0:
+            return "Nome: " + (card?.name ?? Texts.noInformation)
+        case 1:
+            return "Flavor: " + (card?.flavor ?? Texts.noInformation)
+        case 2:
+            return "Descrição: " + (card?.text ?? Texts.noInformation)
+        case 3:
+            return "Set: " + (card?.cardSet ?? Texts.noInformation)
+        case 4:
+            return "Tipo: " + (card?.type ?? Texts.noInformation)
+        case 5:
+            return "Facção: " + (card?.faction ?? Texts.noInformation)
+        case 6:
+            return "Radidade: " + (card?.rarity ?? Texts.noInformation)
+        case 7:
+            return card?.attack != nil ? "Ataque: \(card?.attack ?? 0)" : "Ataque: " + Texts.noInformation
+        case 8:
+            return card?.cost != nil ? "Custo: \(card?.cost ?? 0)" : "Custo: " + Texts.noInformation
+        case 9:
+            return card?.health != nil ? "Saúde: \(card?.health ?? 0)" : "Saúde: " + Texts.noInformation
+        default:
+            return ""
+        }
     }
 }
 
@@ -116,5 +136,18 @@ extension CardDetailsView: CardDetailsViewDelegate {
 extension CardDetailsView {
     private enum Texts {
         static let noInformation: String = "Sem informação"
+    }
+    
+    private struct ViewMetrics {
+        enum TableView {
+            static let heightForRowAt: CGFloat = 40.0
+            static let numberOfRowsInSection: Int = 10
+            
+            static let top: CGFloat = 10.0
+        }
+        
+        enum CardImage {
+            static let cornerRadius: CGFloat = 16.0
+        }
     }
 }
