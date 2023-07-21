@@ -36,6 +36,7 @@ class CardListView: UIView {
     
     weak var delegate: CardListViewDelegate?
     
+    // MARK: - Init
     init() {
         super.init(frame: .zero)
         setupView()
@@ -67,6 +68,7 @@ extension CardListView: ConfigurationView {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension CardListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (bounds.size.width / 2.3), height: bounds.size.height / 3.0)
@@ -78,6 +80,7 @@ extension CardListView: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension CardListView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count

@@ -14,7 +14,7 @@ protocol CardListDisplayLogic: AnyObject {
 
 class CardListViewController: BaseViewController {
     
-    lazy var cardView = CardListView()
+    private lazy var cardView = CardListView()
     
     let interactor: CardListBusinessLogic?
     var router: CardListRoutingLogic?
