@@ -14,21 +14,25 @@ protocol CardDetailsBusinessLogic: AnyObject {
 final class CardDetailsInteractor {
     private let cardId: String
     private let worker: CardDetailsWorkerLogic?
+    private let presenter: CardDetailsPresentationLogic?
     
-    init(cardId: String, worker: CardDetailsWorkerLogic) {
+    init(cardId: String, worker: CardDetailsWorkerLogic, presenter: CardDetailsPresentationLogic) {
         self.worker = worker
         self.cardId = cardId
+        self.presenter = presenter
     }
 }
 
 extension CardDetailsInteractor: CardDetailsBusinessLogic {
     func getCardDetails() {
-        worker?.getCardDetails(cardId: cardId) { result in
+        worker?.getCardDetails(cardId: cardId) { [weak presenter] result in
+            guard let presenter else { return }
             switch result {
             case .success(let response):
-                print(response.first?.name)
+                guard let card = response.first else { return }
+                presenter.presentCardDetails(response: card)
             case .failure(let error):
-                print(error.errorMessage)
+                presenter.presentError(with: error.errorMessage)
             }
         }
     }

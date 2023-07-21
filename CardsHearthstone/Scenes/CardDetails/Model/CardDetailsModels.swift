@@ -25,6 +25,23 @@ enum CardDetailsModels {
             let type:String?
             
         }
-        struct ViewModel {}
+        struct ViewModel {
+            let id: String
+            let name: String?
+            let text: String?
+            let flavor: String?
+            let attack: Int?
+            let cost: Int?
+            let elite: Bool?
+            let faction: String?
+            let health: Int?
+            let rarity: String?
+            let cardSet: String?
+            let type: String?
+            
+            var imageURl: String {
+                "https://art.hearthstonejson.com/v1/render/latest/ptBR/512x/\(id).png"
+            }
+        }
     }
 }

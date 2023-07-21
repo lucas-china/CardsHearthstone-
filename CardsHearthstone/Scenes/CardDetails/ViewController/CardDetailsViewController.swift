@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol CardDetailsDisplayLogic: AnyObject {
+    func displayCard(viewModel: CardDetailsModels.Card.ViewModel)
+    func displayError(errorMessage: String)
+}
+
 class CardDetailsViewController: UIViewController {
     
     let interactor: CardDetailsBusinessLogic
@@ -28,3 +33,12 @@ class CardDetailsViewController: UIViewController {
     }
 }
 
+extension CardDetailsViewController: CardDetailsDisplayLogic {
+    func displayCard(viewModel: CardDetailsModels.Card.ViewModel) {
+        print(viewModel.name)
+    }
+    
+    func displayError(errorMessage: String) {
+        print(errorMessage)
+    }
+}

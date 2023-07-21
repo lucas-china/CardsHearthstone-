@@ -10,9 +10,11 @@ import UIKit
 class CardDetailsConfiguration {
     static func makeView(with cardId: String) -> UIViewController {
         let worker = CardDetailsWorker()
-        let interactor = CardDetailsInteractor(cardId: cardId, worker: worker)
+        let presenter = CardDetailsPresenter()
+        let interactor = CardDetailsInteractor(cardId: cardId, worker: worker, presenter: presenter)
         let viewController = CardDetailsViewController(interactor: interactor)
         
+        presenter.viewController = viewController
         return viewController
     }
 }
