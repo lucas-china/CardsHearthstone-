@@ -9,7 +9,10 @@ import UIKit
 
 class CardDetailsConfiguration {
     static func makeView(with cardId: String) -> UIViewController {
-        let viewController = CardDetailsViewController()
+        let worker = CardDetailsWorker()
+        let interactor = CardDetailsInteractor(cardId: cardId, worker: worker)
+        let viewController = CardDetailsViewController(interactor: interactor)
+        
         return viewController
     }
 }

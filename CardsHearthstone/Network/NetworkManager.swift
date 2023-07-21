@@ -8,16 +8,13 @@
 import Foundation
 
 protocol NetworkManagerProtocol: AnyObject {
-    func performDataTask<T: Decodable>(route: Routes, httpMethod: HTTPMethod, completionHandler: @escaping (Result<T, NetworkError>) -> Void)
+    func performDataTask<T: Decodable>(route: Routes, httpMethod: HTTPMethod, headers: [String: String]?, completionHandler: @escaping (Result<T, NetworkError>) -> Void)
 }
 
 final class NetworkManager {
-    // MARK: - Private Variables
-    private let baseURL: String = "https://api.hearthstonejson.com/v1/latest/ptBR/"
-    
     // MARK: - Private Methods
-    private func makeURLRequest(route: Routes, httpMethod: HTTPMethod = .get) -> URLRequest? {
-        let urlString = baseURL + route.endpoint
+    private func makeURLRequest(route: Routes, httpMethod: HTTPMethod = .get, headers: [String: String]? = nil) -> URLRequest? {
+        let urlString = route.endpoint
         
         guard let url = URL(string: urlString) else {
             return nil
@@ -25,14 +22,16 @@ final class NetworkManager {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod.rawValue
+        urlRequest.allHTTPHeaderFields = headers
+        
         return urlRequest
     }
 }
 
 // MARK: - NetworkManagerProtocol
 extension NetworkManager: NetworkManagerProtocol {
-    func performDataTask<T: Decodable>(route: Routes, httpMethod: HTTPMethod = .get, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
-        guard let urlRequest = makeURLRequest(route: route) else {
+    func performDataTask<T: Decodable>(route: Routes, httpMethod: HTTPMethod = .get, headers: [String: String]? = nil, completionHandler: @escaping (Result<T, NetworkError>) -> Void) {
+        guard let urlRequest = makeURLRequest(route: route, headers: headers) else {
             completionHandler(.failure(.invalidURLError))
             return
         }

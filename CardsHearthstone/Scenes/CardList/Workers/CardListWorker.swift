@@ -21,9 +21,10 @@ final class CardListWorker {
     }
 }
 
+// MARK: - CardListWorkerLogic
 extension CardListWorker: CardListWorkerLogic {
     func getCardList(completionHandler: @escaping (Result<CardListResponse, NetworkError>) -> Void) {
-        service.performDataTask(route: .cards, httpMethod: .get) { (result: Result<CardListResponse, NetworkError>) in
+        service.performDataTask(route: .cards, httpMethod: .get, headers: nil) { (result: Result<CardListResponse, NetworkError>) in
             DispatchQueue.main.async {
                 completionHandler(result)
             }
