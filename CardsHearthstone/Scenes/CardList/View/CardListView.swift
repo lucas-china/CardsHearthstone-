@@ -63,6 +63,7 @@ extension CardListView: ConfigurationView {
     func configureViews() {
         cardsCollectionView.dataSource = self
         cardsCollectionView.delegate = self
+        cardsCollectionView.backgroundColor = .black
     }
 }
 

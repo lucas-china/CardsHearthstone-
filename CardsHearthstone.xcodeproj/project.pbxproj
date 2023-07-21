@@ -35,6 +35,7 @@
 		74E5323F2A6A401500679B31 /* CardDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E5323E2A6A401500679B31 /* CardDetailsWorker.swift */; };
 		74E532422A6A49D100679B31 /* CardDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532412A6A49D100679B31 /* CardDetailsInteractor.swift */; };
 		74E532462A6A4C4E00679B31 /* CardDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */; };
+		74E532492A6A522600679B31 /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E532482A6A522600679B31 /* CardDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		74E5323E2A6A401500679B31 /* CardDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsWorker.swift; sourceTree = "<group>"; };
 		74E532412A6A49D100679B31 /* CardDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsInteractor.swift; sourceTree = "<group>"; };
 		74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsPresenter.swift; sourceTree = "<group>"; };
+		74E532482A6A522600679B31 /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 		74E532332A6A3A5100679B31 /* CardDetails */ = {
 			isa = PBXGroup;
 			children = (
+				74E532472A6A521800679B31 /* View */,
 				74E532432A6A4C2800679B31 /* Presenter */,
 				74E532402A6A49BD00679B31 /* Interactor */,
 				74E5323D2A6A3FE700679B31 /* Workers */,
@@ -315,6 +318,14 @@
 				74E532452A6A4C4E00679B31 /* CardDetailsPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		74E532472A6A521800679B31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74E532482A6A522600679B31 /* CardDetailsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +405,7 @@
 				74E532052A69D1D600679B31 /* NetworkRoutes.swift in Sources */,
 				74E5320A2A69D56400679B31 /* CardListModels.swift in Sources */,
 				74E5323C2A6A3C1300679B31 /* CardDetailsModels.swift in Sources */,
+				74E532492A6A522600679B31 /* CardDetailsView.swift in Sources */,
 				74E532302A69FDA200679B31 /* BaseViewController.swift in Sources */,
 				74E5320D2A69D6EA00679B31 /* CardListWorker.swift in Sources */,
 				74E5322E2A69FD7F00679B31 /* SpinnerViewController.swift in Sources */,

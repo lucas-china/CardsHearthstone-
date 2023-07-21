@@ -40,7 +40,7 @@ enum CardDetailsModels {
             let type: String?
             
             var imageURl: String {
-                "https://art.hearthstonejson.com/v1/render/latest/ptBR/512x/\(id).png"
+                "https://art.hearthstonejson.com/v1/render/latest/ptBR/256x/\(id).png"
             }
         }
     }

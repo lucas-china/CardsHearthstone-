@@ -12,10 +12,14 @@ protocol CardDetailsDisplayLogic: AnyObject {
     func displayError(errorMessage: String)
 }
 
-class CardDetailsViewController: UIViewController {
+class CardDetailsViewController: BaseViewController {
+    
+    lazy var cardDetailsView = CardDetailsView()
     
     let interactor: CardDetailsBusinessLogic
+    weak var viewDelegate: CardDetailsViewDelegate?
     
+    // MARK: - init
     init(interactor: CardDetailsBusinessLogic) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -25,17 +29,24 @@ class CardDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life Cycle
+    override func loadView() {
+        viewDelegate = cardDetailsView
+        view = cardDetailsView
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.backgroundColor = .blue
-        
+        shouldShowLoading(true)
         interactor.getCardDetails()
     }
 }
 
+// MARK: - CardDetailsDisplayLogic
 extension CardDetailsViewController: CardDetailsDisplayLogic {
     func displayCard(viewModel: CardDetailsModels.Card.ViewModel) {
-        print(viewModel.name)
+        shouldShowLoading(false)
+        viewDelegate?.updateView(card: viewModel)
     }
     
     func displayError(errorMessage: String) {

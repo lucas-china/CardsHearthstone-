@@ -23,6 +23,7 @@ class CardListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.lineBreakMode = .byTruncatingTail
         label.textAlignment = .center
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
