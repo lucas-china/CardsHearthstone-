@@ -11,18 +11,18 @@ enum CardDetailsModels {
     enum Card {
         struct Request {}
         struct Response: Decodable {
-            let cardId:String
-            let name:String?
-            let text:String?
-            let flavor:String?
-            let attack:Int?
-            let cost:Int?
-            let elite:Bool?
-            let faction:String?
-            let health:Int?
-            let rarity:String?
-            let set:String?
-            let type:String?
+            let cardId: String
+            let name: String?
+            let text: String?
+            let flavor: String?
+            let attack: Int?
+            let cost: Int?
+            let elite: Bool?
+            let faction: String?
+            let health: Int?
+            let rarity: String?
+            let set: String?
+            let type: String?
             
         }
         struct ViewModel {
